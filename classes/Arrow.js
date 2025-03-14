@@ -11,34 +11,30 @@ class Arrow {
 	  push();
 	  // Translate the drawing origin to the arrow's position
 	  translate(this.x, this.y);
-	  // Rotate by the rotation value
 	  rotate(this.rotation);
-	  // Draw the arrow shape
-	  line(-50, -25, 0, -25);   // Left part of the arrow
-	  line(0, -25, 0, -50);      // Arrowhead
-	  line(0, -50, 50, 0);       // Right part of the arrow
-	  line(50, 0, 0, 50);        // Bottom part of the arrow
-	  line(0, 50, 0, 25);        // Arrow tail
-	  line(0, 25, -50, 25);      // Left tail
-	  line(-50, 25, -50, -25);   // Left side of the arrow
+	fill(100,100,100);
+	stroke(200,200,200);
+	
+	  rect (0,0,10,40);  
+	   
 	  pop();
 	}
   
 	// Method to rotate the arrow to always point to the center of the canvas
-	rotateToCentre(targetX, targetY) {
+	rotateToCentre( targetY) {
 	  // Hide the cursor
 	  noCursor();
   
 	  // Move the arrow with the mouse position
-	  this.x = mouseX;
+	  
 	  this.y = mouseY;
   
 	  // Calculate the difference between the arrow position and the center
-	  let dx = targetX - this.x;
+	  
 	  let dy = targetY - this.y;
   
 	  // Calculate the angle to the center using atan2
-	  this.rotation = atan2(dy, dx);
+	  this.rotation = atan2(dy);
 	}
   
   }
