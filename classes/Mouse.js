@@ -1,4 +1,4 @@
-class Arrow {
+class Mouse {
 	constructor(x, y, rotation) {
 	  // Initialize x, y, and rotation properties
 	  this.x = x;
@@ -6,30 +6,30 @@ class Arrow {
 	  this.rotation = rotation;
 	}
   
-	// Function to draw the arrow
-	drawArrow() {
+	// Function to draw the mouse
+	drawMouse() {
 	  push();
-	  // Translate the drawing origin to the arrow's position
+	  // Translate the drawing origin to the mouse's position
 	  translate(this.x, this.y);
 	  rotate(this.rotation);
 	fill(100,100,100);
-	stroke(200,200,200);
+	stroke(200,200, 200);
 	
 	  rect (0,0,10,40);  
 	   
 	  pop();
 	}
   
-	// Method to rotate the arrow to always point to the center of the canvas
+	// Method to rotate the mouse to always point to the center of the canvas
 	rotateToCentre( targetY) {
 	  // Hide the cursor
 	  noCursor();
   
-	  // Move the arrow with the mouse position
+	  // Move the mouse with the mouse position
 	  
 	  this.y = mouseY;
   
-	  // Calculate the difference between the arrow position and the center
+	  // Calculate the difference between the mouse position and the center
 	  
 	  let dy = targetY - this.y;
   

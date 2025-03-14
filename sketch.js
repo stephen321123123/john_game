@@ -1,4 +1,4 @@
-let arrow;
+let mouse;
 
 var positionX;
 var xSpeed;
@@ -13,20 +13,15 @@ function setup() {
 	ySpeed = 3;
  
   
-  // Create an arrow object placed in the center of the canvas
-  arrow = new Arrow(width / 6, height / 2, 0);
+  // Create an mouse object placed in the center of the canvas
+  mouse = new Mouse(width / 6, height / 2, 0);
 }
 
 function draw() {
   background(220,0,0);
-
   
-
-
-// Draw the arrow
-  arrow.drawArrow();
-  // Rotate the arrow to face the mouse
-  arrow.rotateToCentre();
+  mouse.drawMouse();
+  mouse.rotateToCentre();
 
 
 
