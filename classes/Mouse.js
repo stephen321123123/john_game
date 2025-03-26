@@ -1,41 +1,35 @@
 class Mouse {
-	constructor(x, y, rotation) {
-	  // Initialize x, y, and rotation properties
+	constructor(x, y) {
+	  // Initialize  y and rotation properties
 	  this.x = x;
-	  this.y = y;
-	  this.rotation = rotation;
+	  this.y = 500;
+	  
 	}
   
 	// Function to draw the mouse
-	drawMouse() {
+	renderCursor() {
 	  push();
-	  // Translate the drawing origin to the mouse's position
+
 	  translate(this.x, this.y);
-	  rotate(this.rotation);
-	fill(100,100,100);
-	stroke(200,200, 200);
-	
-	  rect (0,0,10,40);  
-	   
+
+	  fill(225,197,91);
+	  stroke(100);
+
+	  beginShape();
+	  vertex(40,20);
+	  vertex(-40,20);
+	  vertex(-40,40);
+	  vertex(40,40);
+	  endShape();
+
 	  pop();
 	}
   
-	// Method to rotate the mouse to always point to the center of the canvas
-	rotateToCentre( targetY) {
-	  // Hide the cursor
-	  noCursor();
-  
-	  // Move the mouse with the mouse position
-	  
-	  this.y = mouseY;
-  
-	  // Calculate the difference between the mouse position and the center
-	  
-	  let dy = targetY - this.y;
-  
-	  // Calculate the angle to the center using atan2
-	  this.rotation = atan2(dy);
+	
+	moveToMouse(targetX) {
+      noCursor()
+	  this.x = mouseX; //y pos of rect moves with y pos of mouse
+	  let dx = targetX - this.x;
 	}
-  
   }
   
