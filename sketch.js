@@ -4,6 +4,7 @@ let positionY;
 let ySpeed;
 
 function setup() {
+  
   createCanvas(400, 600);
   positionX = random(400);
 	positionY = random(600);

@@ -2,7 +2,7 @@ class Ball {
 	constructor(x, y, rotation) {
 	  // Initialize  y and rotation properties
       this.x = x;
-	  this.y = y;
+	    this.y = y;
       this.colour = (200,200,200);
 	  positionX = random(400);
 	  positionY = random(600);

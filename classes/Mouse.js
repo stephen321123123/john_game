@@ -25,7 +25,6 @@ class Mouse {
 	  pop();
 	}
   
-	
 	moveToMouse(targetX) {
       noCursor()
 	  this.x = mouseX; //y pos of rect moves with y pos of mouse
