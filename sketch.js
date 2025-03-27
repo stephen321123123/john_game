@@ -19,6 +19,7 @@ function setup() {
 function draw() {
   background(220,0,0);
   
+
   mouse.renderCursor();
   mouse.moveToMouse();
   ball.renderBall();
