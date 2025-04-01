@@ -1,36 +1,36 @@
 class Ball {
-	constructor(x, y, rotation) {
+	constructor(rotation) {
 	  // Initialize  y and rotation properties
-      this.x = x;
-	    this.y = y;
     this.colour = color(random(0,255,0), random(0,255,0), random(0,255));
-	  positionX = random(400);
-	  positionY = random(600);
+	  this.positionX = random(400);
+	  this.positionY = random(600);
 	  this.rotation = rotation;
 	}
   
 	// Function to draw the mouse
 	renderBall() {
         push();
-        translate(this.x, this.y);
         fill(this.colour);
-        ellipse(positionX, positionY, 15, 15);
+        ellipse(this.positionX, this.positionY, 15, 15);
         pop();
       }
 
       movementBall(){  
-        if(positionX > width || positionX < 0) { 
+        if(this.positionX > width || this.positionX < 0) { 
         xSpeed = xSpeed * -1;   //bounce ball off canvas x axis
         
         }
 
-        if(positionY > height || positionY < 0) { 
+        if(this.positionY > height || this.positionY < 0) { 
         ySpeed = ySpeed * -1;   //bounce ball off canvas y axis
         
         }
 
-        positionX = positionX + xSpeed;  
-        positionY = positionY - ySpeed;
+        this.positionX = this.positionX + xSpeed;  
+        this.positionY = this.positionY - ySpeed;
       }
   }
+
+
+  
   

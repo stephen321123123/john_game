@@ -2,14 +2,19 @@ let positionX;
 let xSpeed;
 let positionY;
 let ySpeed;
+let mouseObj;
+
+function preload(){
+  Mouse.preload();
+}
 
 function setup() {
   
   createCanvas(400, 600);
   positionX = random(400);
 	positionY = random(600);
-  xSpeed = 3;
-	ySpeed = 3;
+  xSpeed = 7;
+	ySpeed = 7;
  
   // Create an mouse object placed in the center of the canvas
    mouse = new Mouse(width / 6, height/2);
