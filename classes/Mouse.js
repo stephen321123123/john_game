@@ -11,8 +11,8 @@ class Mouse {
     beginShape();
     vertex(40, 20);
     vertex(-40, 20);
-    vertex(-40, 40);
-    vertex(40, 40);
+    vertex(-40, 25);   
+    vertex(40, 25);
     endShape(CLOSE); 
 
     pop();

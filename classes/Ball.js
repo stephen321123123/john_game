@@ -21,18 +21,19 @@ class Ball {
   }
 
 
+  //checks if my ball has collided with the paddle
   bounceBall(mouse) {
-
     let mouseLeft = mouse.x - 40;  //-40 as the paddle is 80 wide
     let mouseRight = mouse.x + 40;
     let mouseTop = mouse.y + 20;
-    let mouseBottom = mouse.y + 40;
+    let mouseBottom = mouse.y + 25;
 
     
-    if (this.x - this.radius < mouseRight && this.x + this.radius > mouseLeft &&
-        this.y + this.radius > mouseTop && this.y - this.radius < mouseBottom) {
+    if (this.x - this.radius < mouseRight && 
+        this.x + this.radius > mouseLeft &&
+        this.y + this.radius > mouseTop && 
+        this.y - this.radius < mouseBottom) {
       
- 
       this.yspeed = -this.yspeed; 
     }
   }
