@@ -25,5 +25,7 @@ class Mouse {
     if (keyIsDown(68)) { 
       this.x += 5;
     } 
+    
+    this.x = constrain(this.x, 40, width - 40); // learn constrain function
   }
 }

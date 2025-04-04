@@ -3,7 +3,7 @@ let mouse;
 let gameStarted = false;
 
 function setup() {
-  createCanvas(400, 600);
+  createCanvas(800, 600);
   noCursor();
   ball = new Ball({
     x: 10,
@@ -32,7 +32,8 @@ function draw() {
   mouse.moveWithKeys();
   ball.drawBall();
   ball.moveBall();
-  ball.bounceBall();  
+  ball.bounceBall(mouse);
+  ball.wall();  
 }
 
 function showStartScreen() {
