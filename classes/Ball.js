@@ -25,8 +25,8 @@ class Ball {
   bounceBall(mouse) {
     let mouseLeft = mouse.x - 40;  //-40 as the paddle is 80 wide
     let mouseRight = mouse.x + 40;
-    let mouseTop = mouse.y + 20;
-    let mouseBottom = mouse.y + 25;
+    let mouseTop = mouse.y - 0;
+    let mouseBottom = mouse.y + 0;
 
     
     if (this.x - this.radius < mouseRight && 

@@ -6,16 +6,10 @@ class Mouse {
 
   renderCursor() {
     push();
-
-    translate(this.x, this.y); 
-    beginShape();
-    vertex(40, 20);
-    vertex(-40, 20);
-    vertex(-40, 25);   
-    vertex(40, 25);
-    endShape(CLOSE); 
-
-    pop();
+  translate(this.x, this.y); 
+  rectMode(CENTER);  // Optional: Makes sure the rectangle is centered around the (x, y) position
+  rect(0, 0, 80, 5); // Draws a rectangle at the center (0,0), with width 80 and height 20
+  pop();
   }
 
   moveWithKeys() {

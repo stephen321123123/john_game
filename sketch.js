@@ -2,9 +2,24 @@ let ball;
 let mouse;
 let gameStarted = false;
 
+const areaWidth = 800;
+let numBlocks = 10;
+const blockWidth = areaWidth / numBlocks;
+const blockHeight = 10;
+let blocks = [];
+
 function setup() {
   createCanvas(800, 600);
   noCursor();
+
+  for(let i = 0; i < numBlocks; i++){
+    blocks.push(new Block({
+      posX: i * blockWidth,
+      posY: 100,
+      colour: color(random(255,0,0), random(0,255,0), random(0,0,255)),
+    }));
+  }
+  
   ball = new Ball({
     x: 10,
     y: 10,
@@ -15,8 +30,8 @@ function setup() {
   });
 
   mouse = new Mouse({
-    x: width/6,
-    y: height * 0.8
+    x: width / 6,
+    y: height * 0.8,
   });
 }
 
@@ -34,6 +49,8 @@ function draw() {
   ball.moveBall();
   ball.bounceBall(mouse);
   ball.wall();  
+
+  blocks.forEach(block => block.renderBlock());
 }
 
 function showStartScreen() {
