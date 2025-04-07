@@ -3,7 +3,7 @@ let mouse;
 let gameStarted = false;
 
 const areaWidth = 800;
-let numBlocks = 10;
+let numBlocks = 20;
 const blockWidth = areaWidth / numBlocks;
 const blockHeight = 10;
 let blocks = [];
@@ -19,7 +19,14 @@ function setup() {
       colour: color(random(255,0,0), random(0,255,0), random(0,0,255)),
     }));
   }
-  
+  for(let i = 0; i < numBlocks; i++){
+    blocks.push(new Block({
+      posX: i * blockWidth,
+      posY: 140,
+      colour: color(random(255,0,0), random(0,255,0), random(0,0,255)),
+    }));
+  }
+
   ball = new Ball({
     x: 10,
     y: 10,
