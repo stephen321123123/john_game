@@ -44,8 +44,13 @@ function draw() {
   background(220, 0, 0);
 
   if (!gameStarted) {
-    showStartScreen();
+    showStartScreen();   //start screen
     return; 
+  }
+
+  if (ball.y > mouse.y + 10) {
+    showEndScreen();           //end game screen
+    return
   }
 
   mouse.renderCursor();
@@ -65,8 +70,17 @@ function showStartScreen() {
   text('Click to Start', width / 2, height / 2);
 }
 
+function showEndScreen() {
+  fill(255);
+  textAlign(CENTER, CENTER);
+  textSize(32);
+  text('Game Over', width / 2, height / 2);
+}
+
 function mousePressed() {
   if (!gameStarted) {
+    gameStarted = true;
+  } else if (ball.y > mouse.y +10){
     gameStarted = true;
   }
 }
