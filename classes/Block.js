@@ -7,6 +7,6 @@ class Block {
 
     renderBlock(){
         fill (this.colour)
-        rect(this.posX, this.posY, 40, 10);
+        rect(this.posX, this.posY, 40, 15);
     }
 }

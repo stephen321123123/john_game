@@ -12,20 +12,18 @@ function setup() {
   createCanvas(800, 600);
   noCursor();
 
-  for(let i = 0; i < numBlocks; i++){
+  const numRows = 5;
+  for (let row = 0; row < numRows; row++){ //outer loop 
+    let posY = 0 + (row * 15);            //every loop adds 15 to the rows y pos 
+ 
+  for(let i = 0; i < numBlocks; i++){   //inner loop 
     blocks.push(new Block({
       posX: i * blockWidth,
-      posY: 100,
+      posY: posY,
       colour: color(random(255,0,0), random(0,255,0), random(0,0,255)),
     }));
   }
-  for(let i = 0; i < numBlocks; i++){
-    blocks.push(new Block({
-      posX: i * blockWidth,
-      posY: 140,
-      colour: color(random(255,0,0), random(0,255,0), random(0,0,255)),
-    }));
-  }
+ }
 
   ball = new Ball({
     x: 10,

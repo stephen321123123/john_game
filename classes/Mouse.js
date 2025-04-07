@@ -8,7 +8,7 @@ class Mouse {
     push();
   translate(this.x, this.y); 
   rectMode(CENTER);  // Optional: Makes sure the rectangle is centered around the (x, y) position
-  rect(0, 0, 80, 5); // Draws a rectangle at the center (0,0), with width 80 and height 20
+  rect(0, 0, 40, 5); // Draws a rectangle at the center (0,0), with width 80 and height 20
   pop();
   }
 
@@ -20,6 +20,6 @@ class Mouse {
       this.x += 5;
     } 
     
-    this.x = constrain(this.x, 40, width - 40); // learn constrain function
+    this.x = constrain(this.x, 20, width - 20); // learn constrain function
   }
 }
