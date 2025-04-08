@@ -36,6 +36,16 @@ class Ball {
         this.x + this.radius > mouseLeft &&
         this.y + this.radius > mouseTop && 
         this.y - this.radius < mouseBottom) {
+
+          if (this.y < mouse.y) {
+            console.log("hit top side");
+          } else if (this.y > mouse.y) {
+            console.log("hit bottom side");
+          } else if (this.x < mouse.x) {
+            console.log("hit left side");
+          } else if (this.x > mouse.x) {
+            console.log("hit right side");
+          }
       
       this.yspeed = -this.yspeed; 
     }

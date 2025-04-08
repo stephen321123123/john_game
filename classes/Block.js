@@ -11,4 +11,10 @@ class Block {
         fill (this.colour)
         rect(this.posX, this.posY, this.width, this.height);
     }
+
+
+    
+      
+
+    
 }

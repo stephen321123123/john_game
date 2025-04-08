@@ -1,6 +1,7 @@
 let ball;
 let mouse;
 let gameStarted = false;
+let score = 0;
 
 const areaWidth = 800;
 let numBlocks = 20;
@@ -16,7 +17,7 @@ function setup() {
   createCanvas(800, 600);
   noCursor();
 
-  const numRows = 5;
+  const numRows = 10;
   for (let row = 0; row < numRows; row++){ //outer loop 
     let posY = 0 + (row * 15);            //every loop adds 15 to the rows y pos 
  
@@ -33,7 +34,7 @@ function setup() {
 
   ball = new Ball({
     x: 10,
-    y: 10,
+    y: 300,
     speed: 5,
     radius: 10,
     colour: random(255),
@@ -49,15 +50,28 @@ function setup() {
 function draw() {
   background(220, 0, 0);
 
-  if (!gameStarted) {
-    showStartScreen();   //start screen
-    return; 
+  for (let i = blocks.length - 1; i >= 0; i--) {
+    let block = blocks[i];
+  
+  
+    // Collision check
+    if (
+      ball.x + ball.radius > block.posX &&
+      ball.x - ball.radius < block.posX + block.width &&
+      ball.y + ball.radius > block.posY &&
+      ball.y - ball.radius < block.posY + block.height
+    ) {
+      console.log("hit block!");
+      
+      // Bounce off
+      ball.yspeed = -ball.yspeed;
+  
+      // Remove block
+      blocks.splice(i, 1);
+      score++;
+    }
   }
-
-  if (ball.y > mouse.y + 10) {
-    showEndScreen();           //end game screen
-    return
-  }
+  
 
   mouse.renderCursor();
   mouse.moveWithKeys();
@@ -65,8 +79,12 @@ function draw() {
   ball.moveBall();
   ball.bounceBall(mouse);
   ball.wall();  
-
   blocks.forEach(block => block.renderBlock());
+
+  fill(255);
+  textSize(32);
+  textAlign(CENTER);
+  text("Score: " + score, width/2 - 20, 40);
 }
 
 function showStartScreen() {
