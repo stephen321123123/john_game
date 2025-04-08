@@ -1,25 +1,29 @@
 class Mouse {
+  // Constructor to initialize the mouse's (paddle's) position
   constructor(obj) {
-    this.x = obj.x;
-    this.y = obj.y;
+    this.x = obj.x; // Mouse (paddle) x-coordinate
+    this.y = obj.y; // Mouse (paddle) y-coordinate
   }
 
+  // Method to render the paddle (as a rectangle) on the screen
   renderCursor() {
-    push();
-  translate(this.x, this.y); 
-  rectMode(CENTER);  // Optional: Makes sure the rectangle is centered around the (x, y) position
-  rect(0, 0, 40, 5); // Draws a rectangle at the center (0,0), with width 80 and height 20
-  pop();
+    push(); // Start a new drawing context to apply transformations
+    translate(this.x, this.y); // Move the drawing context to the mouse's (paddle's) position
+    rectMode(CENTER);  // Ensure that the rectangle is drawn from its center
+    rect(0, 0, 40, 5); // Draw the paddle as a 40x5 rectangle centered at (0, 0)
+    pop(); // Restore the previous drawing context
   }
 
+  // Method to move the paddle based on keyboard input (A and D keys)
   moveWithKeys() {
-    if (keyIsDown(65)) { 
-      this.x -= 5;
+    if (keyIsDown(65)) {  // If the 'A' key is pressed
+      this.x -= 5;  // Move the paddle left
     }
-    if (keyIsDown(68)) { 
-      this.x += 5;
-    } 
+    if (keyIsDown(68)) {  // If the 'D' key is pressed
+      this.x += 5;  // Move the paddle right
+    }
     
-    this.x = constrain(this.x, 20, width - 20); // learn constrain function
+    // Constrain the paddle's x-position so it doesn't go off-screen
+    this.x = constrain(this.x, 20, width - 20); 
   }
 }
