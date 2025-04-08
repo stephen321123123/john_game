@@ -8,6 +8,10 @@ const blockWidth = areaWidth / numBlocks;
 const blockHeight = 10;
 let blocks = [];
 
+function preload(){
+  meteorImg = loadImage('images/meteor.png');
+}
+
 function setup() {
   createCanvas(800, 600);
   noCursor();
@@ -20,6 +24,8 @@ function setup() {
     blocks.push(new Block({
       posX: i * blockWidth,
       posY: posY,
+      width: 40,
+      height: 15,
       colour: color(random(255,0,0), random(0,255,0), random(0,0,255)),
     }));
   }

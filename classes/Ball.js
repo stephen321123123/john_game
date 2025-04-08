@@ -11,8 +11,12 @@ class Ball {
   }
 
   drawBall() {
-    fill(this.colour);
-    ellipse(this.x, this.y, this.radius * 2, this.radius * 2); // Ball radius * 2 for full diameter
+   
+    push ();
+    translate (this.x, this.y);
+    image(meteorImg, -this.radius,-this.radius, this.radius * 2, this.radius * 2);
+    pop ();
+    // ellipse(this.x, this.y, this.radius * 2, this.radius * 2); // Ball radius * 2 for full diameter
   }
 
   moveBall() {
@@ -23,7 +27,7 @@ class Ball {
 
   //checks if my ball has collided with the paddle
   bounceBall(mouse) {
-    let mouseLeft = mouse.x - 20;  //-40 as the paddle is 80 wide
+    let mouseLeft = mouse.x - 20;  //-20 as the paddle is 40 wide
     let mouseRight = mouse.x + 20;
     let mouseTop = mouse.y - 0;
     let mouseBottom = mouse.y + 0;
