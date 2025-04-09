@@ -1,20 +1,17 @@
 class Block {
-    // Constructor to initialize the block's position, size, and color
     constructor(obj) {
-      this.posX = obj.posX; // Block's x-coordinate
-      this.posY = obj.posY; // Block's y-coordinate
-      this.width = obj.width; // Block's width
-      this.height = obj.height; // Block's height
-      this.colour = obj.colour; // Block's color
+      this.posX = obj.posX; 
+      this.posY = obj.posY; 
+      this.width = obj.width;
+      this.height = obj.height; 
+      this.colour = obj.colour;
     }
   
-    // Method to render the block on the screen
     renderBlock() {
-      fill(this.colour); // Set the fill color to the block's color
-      rect(this.posX, this.posY, this.width, this.height); // Draw the block at its position with its dimensions
+      fill(this.colour); 
+      rect(this.posX, this.posY, this.width, this.height); 
     }
   
-    // Method to check for a collision with the ball
     checkCollision(ball) {
       // Check if the ball intersects with the block
       if (
@@ -26,7 +23,7 @@ class Block {
         ball.velocity.y = -ball.velocity.y; // Reverse the ball's vertical direction (bounce effect)
         return true; // Indicate a collision occurred
       }
-      return false; // No collision
+      return false; 
     }
   }
   
